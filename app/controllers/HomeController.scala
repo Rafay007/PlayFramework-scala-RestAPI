@@ -3,6 +3,7 @@ package controllers
 import javax.inject._
 import play.api._
 import play.api.mvc._
+import scala.collection.mutable.ArrayBuffer
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
@@ -20,5 +21,11 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
    */
   def index() = Action { implicit request: Request[AnyContent] =>
     Ok(views.html.index())
+    O
   }
+
+  def ping() = Action { implicit request: Request[AnyContent] =>
+    Ok(s"size of dull ${ArrayBuffer[String]("Rafay Jungsher").mkString}")
+  }
+
 }
